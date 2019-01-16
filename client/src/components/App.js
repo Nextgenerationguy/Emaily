@@ -4,11 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
-
-const Dashboard = () => <h6>I am the Dashboard</h6>
-const SurveyNew = () => <h6>Create a ew Survey</h6>
-// const Landing = () => <h6>Landing page</h6>
-// const NotFound = () => <h2>404 not found</h2>
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
 
 
  class App extends Component {
@@ -21,11 +18,12 @@ const SurveyNew = () => <h6>Create a ew Survey</h6>
             <div>
                 <BrowserRouter>
                     <div className="container">
-                        <Header/>                   
-                        <Route exact path='/' component={Landing} />
-                        <Route exact path='/surveys' component={Dashboard} />
-                        <Route path='/surveys/new' component={SurveyNew} />
-                        {/* <Route component={NotFound} /> */}
+                        <Header/> 
+                        <div>                  
+                            <Route exact path='/' component={Landing} />
+                            <Route exact path='/surveys' component={Dashboard} />
+                            <Route path='/surveys/new' component={SurveyNew} />
+                        </div>
                     </div>
                 </BrowserRouter>
             </div>
